@@ -1,0 +1,24 @@
+{
+  "name": "novel_node",
+  "version": "1.0.0",
+  "description": "小说后台",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlongCoding/novel_node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlongCoding/novel_node/issues"
+  },
+  "homepage": "https://github.com/zlongCoding/novel_node#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "koa": "^2.5.2",
+    "nodemon": "^1.18.3"
+  }
+}
