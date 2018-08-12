@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/zlongCoding/novel_node#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "axos": "^0.0.1",
     "chalk": "^2.4.1",
     "koa": "^2.5.2",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "puppeteer": "^1.7.0"
   }
 }
