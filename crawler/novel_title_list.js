@@ -49,5 +49,6 @@ const sleep = time => new Promise(resolve => {
 
   brower.close()
 
-  console.log(result)
+  process.send({result})
+  process.exit(0)
 })()

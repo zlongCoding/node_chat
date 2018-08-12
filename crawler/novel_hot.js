@@ -23,20 +23,17 @@ const sleep = time => new Promise(resolve => {
   const result = await page.evaluate(() => {
     var $ = window.$
     var items = $("#hotcontent .item")
-    //  return $(items[1]).find("a").attr("href")
     var novalHot = []
     if (items.length >= 1) {
       items.each((index,item) => {
         let  it = $(item)
         let linkUrl = it.find("a").attr("href")
         let linkImg = it.find("img").attr('src')
-        // let linkText = it.text()
         let novalName = it.find("dt a").text()
         let author = it.find("dt span").text()
         let Introduction = it.find("dd").text()
         novalHot.push({
           linkUrl,
-          // linkText,
           linkImg,
           novalName,
           author,
@@ -49,5 +46,6 @@ const sleep = time => new Promise(resolve => {
 
   brower.close()
 
-  console.log(result)
+  process.send({result})
+  process.exit(0)
 })()
