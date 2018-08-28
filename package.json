@@ -4,7 +4,8 @@
   "description": "小说后台",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node app"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,17 @@
     "bcrypt": "^3.0.0",
     "chalk": "^2.4.1",
     "koa": "^2.5.2",
+    "log4js": "^3.0.5",
     "mongoose": "^5.2.7",
     "nanoid": "^1.2.0",
-    "nodemon": "^1.18.3",
     "puppeteer": "^1.7.0",
     "qiniu": "^7.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "koa-swagger-decorator": "^1.5.9"
   }
 }

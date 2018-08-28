@@ -16,10 +16,12 @@ const sleep = time => new Promise(resolve => {
   })
 
   const page = await brower.newPage()
-
+  
   await page.goto(url, {
     waitUntil: "networkidle2"
   })
+  await sleep(2000)
+  // console.log(await page.content())
   const result = await page.evaluate(() => {
     var $ = window.$
     var items = $("#hotcontent .item")

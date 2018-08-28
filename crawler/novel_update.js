@@ -20,6 +20,7 @@ const sleep = time => new Promise(resolve => {
   await page.goto(url, {
     waitUntil: "networkidle2"
   })
+  
   const result = await page.evaluate(() => {
     var $ = window.$
     var items = $("#newscontent li")

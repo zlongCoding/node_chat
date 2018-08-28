@@ -15,10 +15,11 @@ const sleep = time => new Promise(resolve => {
   })
 
   const page = await brower.newPage()
-
+  
   await page.goto(url, {
     waitUntil: "networkidle2"
   })
+  // await sleep(3000)
   const result = await page.evaluate(() => {
     var $ = window.$
     
