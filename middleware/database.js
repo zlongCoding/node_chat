@@ -1,13 +1,9 @@
-import { join } from 'path'
-import mongoose from 'mongoose'
-import glob from 'glob'
-import config from '../../config'
+const mongoose = require('mongoose')
+const config = require('../config')
 
-mongoose.Promise = global.Promise
 
-glob.sync(join(__dirname, '../database/schema', '**/*.js')).forEach(require)
 
-export const database = app => {
+module.exports = () => {
   let maConnecTimes = 0
   const { db } = config
 

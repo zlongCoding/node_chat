@@ -1,0 +1,14 @@
+{
+  "name": "novel",
+  "version": "1.0.0",
+  "description": "novel项目API文档",
+  "title": "novel API",
+  "url": "http://localhost:3000",
+  "sampleUrl": "http://localhost:3000",
+  "forceLanguage": "zh-cn",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+
+}

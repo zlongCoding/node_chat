@@ -1,51 +1,51 @@
-// router.js
-import Router from 'koa-router'
+const koa = require('koa')
+const koaBody =  require('koa-body')
+const router  = require('./router')
+const logger = require('./middleware/logger')
+const httpError = require('./middleware/httpError')
+const cors = require('koa2-cors')
+const config = require("./config")
+const ip = require('ip')
+const path = require("path")
+const static = require('koa-static')
+const session = require("koa-session")
+const app = new koa()
 
-import Test from './test'
+//静态资源
+app.use(static(path.resolve(__dirname, "./public")))
+app.use(httpError({
+  errorPageFolder: path.resolve(__dirname, './static/errHtml')
+}))
+ app.use(logger({
+   env: app.env,
+   projectName: 'koa2-loggers',
+   appLogLevel: 'debug',
+   dir: 'logs',
+   serverIp: ip.address()
+ }))
+app.use(cors())
+app.use(session({
+  key: "sessionId",
+  store: new store(), 
+  maxAge: 5000
+}))
+app.use(koaBody({
+  multipart: true
+}))
+app.use(router.routes()).use(router.allowedMethods())
 
-import {
-  wrapper
-} from 'koa-swagger-decorator'
+ // 增加错误的监听处理
+ app.on("error", (err, ctx) => {
+   if (ctx && !ctx.headerSent && ctx.status < 500) {
+     ctx.status = 500
+   }
+   if (ctx && ctx.log && ctx.log.error) {
+     if (!ctx.state.logged) {
+       ctx.log.error(err.stack)
+     }
+   }
+ })
 
-const router = new Router()
-
-wrapper(router)
-
-// swagger docs avaliable at http://localhost:3000/api/swagger-html
-router.swagger({
-  title: 'Example Server',
-  description: 'API DOC',
-  version: '1.0.0',
-
-  // [optional] default is root path.
-  // if you are using koa-swagger-decorator within nested router, using this param to let swagger know your current router point
-  prefix: '/api',
-
-  // [optional] default is /swagger-html
-  swaggerHtmlEndpoint: '/swagger-html',
-
-  // [optional] default is /swagger-json
-  swaggerJsonEndpoint: '/swagger-json',
-
-  // [optional] additional options for building swagger doc
-  // eg. add api_key as shown below
-  swaggerOptions: {
-    securityDefinitions: {
-      api_key: {
-        type: 'apiKey',
-        in: 'header',
-        name: 'api_key',
-      },
-    },
-  },
-})
-// map all static methods at Test class for router
-// router.map(Test);
-
-// mapDir will scan the input dir, and automatically call router.map to all Router Class
-router.mapDir(_path.resolve(__dirname), {
-  // default: true. To recursively scan the dir to make router. If false, will not scan subroutes dir
-  // recursive: true,
-  // default: true, if true, you can call ctx.validatedBody[Query|Params] to get validated data.
-  // doValidation: true,
+app.listen(config.port, () => {
+  console.log(`Server start at http://127.0.0.1:${config.port}`)
 })

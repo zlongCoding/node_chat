@@ -1,0 +1,1 @@
+[2018-08-29T01:11:06.662] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.0.103","method":"GET","url":"/","host":"localhost:3000","message":{"responseTime":"响应时间为2.327s"},"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"}
