@@ -1,5 +1,10 @@
 # node_novel
-小说后台
+novel && chat 
+主要是以后app、小程序、 桌面程序、管理后台的后台。
+项目所用技术栈：
+> koa + mongoose + redis + puppeteer
+
+目前主要包括，日志系统，邮件系统，api自动生成文档，爬虫。
 
 ```
 ├─config         配置
