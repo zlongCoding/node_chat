@@ -1,7 +1,7 @@
 {
   "name": "novel_node",
   "version": "1.0.0",
-  "description": "小说后台",
+  "description": "novel_node后台",
   "main": "app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development  nodemon app.js",
@@ -19,22 +19,24 @@
   "homepage": "https://github.com/zlongCoding/novel_node#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.0",
-    "chalk": "^2.4.1",
+    "bcryptjs": "^2.4.3",
     "ejs": "^2.6.1",
     "ioredis": "^4.0.0",
     "ip": "^1.1.5",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.9.0",
+    "koa-session2": "^2.2.7",
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
     "log4js": "^3.0.5",
     "mongoose": "^5.2.10",
     "nanoid": "^1.2.0",
+    "nodemailer": "^4.6.8",
     "puppeteer": "^1.7.0",
     "qiniu": "^7.2.1",
-    "redis": "^2.8.0",
+    "uid-safe": "^2.1.5",
     "uuid": "^3.3.2"
   },
   "apidoc": {

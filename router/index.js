@@ -1,7 +1,9 @@
 const routers = require("koa-router")
 const detail = require("../tasks/detail")
 const router = routers()
+const User = require("../controllers/user")
 router.get('/', async (ctx, next) => {
+  
   await detail().then((data) => {
     ctx.body = data
     // next()
@@ -9,13 +11,21 @@ router.get('/', async (ctx, next) => {
     console.log(data)
   })
 })
+
+router.get('/api', (ctx, next) => {
+  ctx.session.view = !ctx.session.view ? 1 : ctx.session.view += 1   
+  console.log(ctx.session.view)
+     ctx.body = {
+       code: 400
+     }
+})
 /**
- * @api {get} /api  测试
+ * @api {get} /apis  测试
  * @apiDescription 测试
- * @apiName submit-login
+ * @apiName long
  * @apiGroup User
- * @apiParam {string} loginName 用户名
- * @apiParam {string} loginPass 密码
+ * @apiParam {string} username 用户名
+ * @apiParam {string} password 密码
  * @apiSuccess {json} result
  * @apiSuccessExample {json} Success-Response:
  *  {
@@ -25,12 +35,9 @@ router.get('/', async (ctx, next) => {
  *          "password" : "loginPass"
  *      }
  *  }
- * @apiSampleRequest http://localhost:3000/api/user/submit-login
+ * @apiSampleRequest http://localhost:3000/apis
  * @apiVersion 1.0.0
  */
-router.get('/api', (ctx, next) => {
-  ctx.body = "1111111111"
-})
-
+router.get('/apis', User.signup)
 
 module.exports =   router

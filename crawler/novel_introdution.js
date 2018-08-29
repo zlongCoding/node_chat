@@ -8,7 +8,6 @@ const sleep = time => new Promise(resolve => {
 
 
 ;(async() => {
-  console.log("start visit the target page")
 
   const brower = await puppeteer.launch({
     args: ["--no--sandbox"],

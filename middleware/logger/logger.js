@@ -52,22 +52,29 @@ module.exports = (options) => {
   }
 
   const logger = log4js.getLogger('cheese')
-
-  return async (ctx, next) => {
-    const start = Date.now()
-
+  if (opts.device) {
     log4js.configure(config)
-    methods.forEach((method, i) => {
-      contextLogger[method] = (message) => {
-        logger[method](access(ctx, message, commonInfo))
-      }
-    })
-    ctx.log = contextLogger
-
-    await next()
-    const responseTime = Date.now() - start
-    logger.info(access(ctx, {
-      responseTime: `响应时间为${responseTime/1000}s`
+    logger.info(JSON.stringify({
+      [opts.device]: opts.deviceContent
     }, commonInfo))
+  } else {
+    return async (ctx, next) => {
+      const start = Date.now()
+  
+      log4js.configure(config)
+      methods.forEach((method, i) => {
+        contextLogger[method] = (message) => {
+          logger[method](access(ctx, message, commonInfo))
+        }
+      })
+      ctx.log = contextLogger
+  
+      await next()
+      const responseTime = Date.now() - start
+      logger.info(access(ctx, {
+        responseTime: `响应时间为${responseTime/1000}s`
+      }, commonInfo))
+    }
   }
+  
 }

@@ -7,7 +7,6 @@ const sleep = time => new Promise(resolve => {
 })
 
 ;(async() => {
-  console.log("start visit the target page")
 
   const brower = await puppeteer.launch({
     args: ["--no--sandbox"],
@@ -50,11 +49,6 @@ const sleep = time => new Promise(resolve => {
     return noval
   })
   brower.close()
-  // console.log(result)
-  // console.log(result.list)
-  // console.log("==============")
-  
-  // let length = result.list.length / 200
   let length = Math.ceil(result.list.length / 100)
   for (let i = 0; i < length; i++) {
      process.send({

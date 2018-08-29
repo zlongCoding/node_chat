@@ -8,7 +8,6 @@ const sleep = time => new Promise(resolve => {
 
 
 ;(async() => {
-  console.log("start visit the target page")
 
   const brower = await puppeteer.launch({
     args: ["--no--sandbox"],
@@ -21,7 +20,6 @@ const sleep = time => new Promise(resolve => {
     waitUntil: "networkidle2"
   })
   await sleep(2000)
-  // console.log(await page.content())
   const result = await page.evaluate(() => {
     var $ = window.$
     var items = $("#hotcontent .item")

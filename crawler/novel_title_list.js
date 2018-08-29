@@ -1,12 +1,3 @@
-// const axios = require("axios")
-
-// axios.get("http://www.biquge.com.tw/quanben/").then(data => {
-//   console.log(data)
-// }).catch(err => {
-//   console.log(err)
-// })
-
-
 const puppeteer = require("puppeteer")
 
 const url = "http://www.biquge.com.tw/"
@@ -17,8 +8,6 @@ const sleep = time => new Promise(resolve => {
 
 
 ;(async() => {
-  console.log("start visit the target page")
-
   const brower = await puppeteer.launch({
     args: ["--no--sandbox"],
     dumpio: false

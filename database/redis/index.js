@@ -1,12 +1,12 @@
 const redisConn = require('./redis')
-module.exports = class Redis {
+class Redis {
   constructor() {
     this.redis = null
   }
-  connToredis() { //创建连接对象
+  connToredis() {
     return new Promise((resolve, reject) => {
       if (this.redis) {
-        resolve(true) //已创建
+        resolve(true)
       } else {
         redisConn().then(resp => {
           this.redis = resp
@@ -17,7 +17,7 @@ module.exports = class Redis {
       }
     })
   }
-  setCommand(id, data) { //增/改
+  setCommand(id, data) {
     if (expire === null || expire === undefined) {
       this.redis.set(`test-${id}`, JSON.stringify(data)).then(resp => {
         console.log('set', resp)
@@ -32,7 +32,7 @@ module.exports = class Redis {
       })
     }
   }
-  getCommand(id) { //查
+  getCommand(id) {
     this.redis.get(`test-${id}`).then(resp => {
       console.log('get', resp)
     }).catch(err => {
@@ -55,25 +55,5 @@ module.exports = class Redis {
       })
   }
 }
-// //调用上面的对象，实现redis操作
-// let redisTest = new RedisTest() //实例对象
-// redisTest.connToredis().then(resp => { //连接成功后，进行redis操作
-//   if (resp) {
-//     redisTest.setCommand(123456, {
-//       name: 'feifeiyu'
-//     }) //增
-//     redisTest.getCommand(123456) //查
-//     redisTest.setCommand(123456, {
-//       name: 'feifeiyu3'
-//     }) //改
-//     redisTest.getCommand(123456) //查
-//     redisTest.delCommand(123456) //删
-//     redisTest.getCommand(123456) //差
-//     redisTest.multiCommand(123457, {
-//       name: 'feifeiyu2'
-//     })
-//   }
-// }).catch(err => {
-//   console.log('err', err)
-// })
-//https://feifeiyum.github.io/2016/09/18/node-koa2-web-datapersist/
+
+module.exports = new Redis()
