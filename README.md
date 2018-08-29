@@ -15,11 +15,11 @@ novel && chat
 ├─logs           日志
 │  └─db
 ├─middleware     中间件
-│  ├─httpError
-│  ├─logger
-│  └─sendEmail
+│  ├─httpError   错误监控
+│  ├─logger      日志
+│  └─sendEmail   邮件
 ├─models         models
-├─public         api接口文档文档
+├─public         api接口文档静态服务器
 │  └─apidoc
 ├─router         路由
 ├─service        service
