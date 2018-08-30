@@ -7,20 +7,17 @@ module.exports =  () => {
     let invoked = false
     let script = resolve(__dirname, '../crawler/novel_detail.js')
     let child = cp.fork(script, [])
-
     child.on('error', err => {
       if (invoked) return
       invoked = true
       reject(err)
     })
-
     child.on('exit', code => {
       if (invoked) return
       invoked = true
-      let err = code === 0 ? null : new Error('exit code ' + code)
-      reject(code)
+      let err = code === 0 ? null :  code
+      reject(err)
     })
-
     child.on('message', data => {
       resovle(data)
     })
