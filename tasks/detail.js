@@ -3,7 +3,7 @@ const { resolve } = require('path')
 
 
 module.exports =  () => {
-  return new Promise((resovle, reject) => {
+  return new Promise((resolves, reject) => {
     let invoked = false
     let script = resolve(__dirname, '../crawler/novel_detail.js')
     let child = cp.fork(script, [])
@@ -19,7 +19,7 @@ module.exports =  () => {
       reject(err)
     })
     child.on('message', data => {
-      resovle(data)
+      resolves(data)
     })
   })
   // child.send(movies)

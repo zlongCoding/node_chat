@@ -5,7 +5,7 @@ const {
 
 
 module.exports = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolves, reject) => {
     let invoked = false
     let script = resolve(__dirname, '../crawler/novel_title_list.js')
     let child = cp.fork(script, [])
@@ -21,7 +21,7 @@ module.exports = () => {
       reject(err)
     })
     child.on('message', data => {
-      resolve(data)
+      resolves(data)
     })
   })
 

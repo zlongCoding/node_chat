@@ -1,5 +1,6 @@
 const koa = require('koa')
 const koaBody = require('koa-body')
+const bodyParser = require('koa-bodyparser');
 const router = require('./router')
 const logger = require('./middleware/logger')
 const httpError = require('./middleware/httpError')
@@ -20,11 +21,11 @@ app.use(httpError({
   errorPageFolder: path.resolve(__dirname, './static/errHtml')
 }))
 
-app.use(session({
-  key: "sessionId",
-  store: new store(),
-  maxAge: config.redis.maxAge
-}, app))
+// app.use(session({
+//   key: "sessionId",
+//   store: new store(),
+//   maxAge: config.redis.maxAge
+// }, app))
 
 app.use(logger({
   env: app.env,
@@ -35,7 +36,7 @@ app.use(logger({
 }))
 app.use(cors())
 
-require("./database/mongoose")()
+// require("./database/mongoose")()
 
 app.use(koaBody({
   multipart: true

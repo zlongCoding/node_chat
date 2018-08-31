@@ -4,11 +4,11 @@ const {
 } = require('path')
 
 
-module.exports = () => {
-  return new Promise((resovle, reject) => {
+module.exports = (queryData) => {
+  return new Promise((resolves, reject) => {
     let invoked = false
     let script = resolve(__dirname, '../crawler/novel_introdution.js')
-    let child = cp.fork(script, [])
+    let child = cp.fork(script, [] )
     child.on('error', err => {
       if (invoked) return
       invoked = true
@@ -20,9 +20,9 @@ module.exports = () => {
       let err = code === 0 ? null : code
       reject(err)
     })
-
+    child.send(queryData)
     child.on('message', data => {
-      resovle(data)
+      resolves(data)
     })
   })
 
