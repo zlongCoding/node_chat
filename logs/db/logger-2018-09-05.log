@@ -69,3 +69,5 @@
 [2018-09-05T17:21:36.533] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
 [2018-09-05T17:21:42.581] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
 [2018-09-05T17:21:42.608] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T19:02:31.920] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T19:02:31.940] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
