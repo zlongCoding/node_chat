@@ -36,7 +36,7 @@ app.use(logger({
 }))
 app.use(cors())
 
-// require("./database/mongoose")()
+require("./database/mongoose")()
 
 app.use(koaBody({
   multipart: true

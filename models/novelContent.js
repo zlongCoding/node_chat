@@ -1,13 +1,8 @@
 const mongoose = require('mongoose')
 
-const UserSchema = new mongoose.Schema({
+const novelContentSchema = new mongoose.Schema({
   name: String,
-  time: String,
-  content: Object,
-  list: Array,
-  introduction: String,
-  img: String,
-  newName: String,
+  content: Array,
   meta: {
     createdAt: {
       type: Date,
@@ -20,15 +15,14 @@ const UserSchema = new mongoose.Schema({
   }
 })
 
-UserSchema.pre('save', function (next) {
+novelContentSchema.pre('save', function (next) {
   if (this.isNew) {
     this.meta.createdAt = this.meta.updatedAt = Date.now()
   } else {
     this.meta.updatedAt = Date.now()
   }
-
   next()
 })
 
-module.exports = mongoose.model('User', UserSchema)
+module.exports = mongoose.model('NovelContent', novelContentSchema)
 

@@ -8,7 +8,7 @@ const sleep = time => new Promise(resolve => {
 
 ;(async() => {
   process.on("message", async function(msg) {
-    let url = msg.url
+    var url = msg.url
     const brower = await puppeteer.launch({
       args: ["--no--sandbox"],
       dumpio: false
@@ -31,8 +31,12 @@ const sleep = time => new Promise(resolve => {
     })
   
     brower.close()
-    
-    process.send({result})
+    result.url = url
+    let obj = {
+     result: result,
+      name: msg.name
+    }
+    process.send(obj)
     process.exit(0)
   })
 })()

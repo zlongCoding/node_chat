@@ -1,6 +1,10 @@
 const mongoose = require("mongoose")
 const config = require("../config")
 const logger = require('../middleware/logger/logger')
+
+// require("../models/user")
+// require("../models/novelList")
+
 module.exports = () => {
 	const { db } = config
 

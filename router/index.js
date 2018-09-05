@@ -7,7 +7,6 @@ const update = require("../tasks/update")
 const router = routers()
 const User = require("../controllers/user")
 router.get('/detail', async (ctx, next) => {
-  console.log(111111111111)
   await detail().then((data) => {
     ctx.body = data
     // next()
@@ -27,7 +26,6 @@ router.get('/hot', async (ctx, next) => {
 router.post('/introduction', async (ctx, next) => {
   await introduction(ctx.request.body).then((data) => {
     ctx.body = data
-    // next()
   }, (data) => {
     console.log(data)
   })

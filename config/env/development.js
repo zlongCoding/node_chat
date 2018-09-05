@@ -1,13 +1,11 @@
 
 const config = {
-  db: 'mongodb://localhost/noval-trailer',
-  port: 3001,
-  base: "http://localhost:3000",
+  port: 3002,
   qiniu: {
-    bucket: 'yourbucket',
-    video: 'http://yourvideourl.xxx.com/',
-    AK: '-dLG8KAfxx',
-    SK: 'wcgqiwkL7xxx'
+    bucket: 'novel',
+    video: 'http://pe5tqbn4g.bkt.clouddn.com/',
+    AK: '0znCE1bxOVh0CSZidpuO0vXT3sFhJ8Zk-b5WGLIN',
+    SK: 'RafgNKD3mo2TXVIEMK38p2PANSej4ZTVqESE9ES0'
   },
   redis: {
     port: 6379,
@@ -19,6 +17,6 @@ const config = {
     user: "zhanglong_hn@163.com",
     pass: "zhanglong163"
   },
-  db: 'mongodb://127.0.0.1:27017/novel',
+  db: 'mongodb://118.126.82.217:27117/novel',
 }
 module.exports = config

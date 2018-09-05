@@ -1,0 +1,71 @@
+[2018-09-05T10:11:19.360] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T10:11:58.424] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T10:11:58.473] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T10:13:11.008] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T10:13:11.161] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T10:15:16.146] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T10:15:16.202] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T11:14:21.176] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T11:14:22.690] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T11:14:22.771] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T11:57:01.473] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T11:57:01.603] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T11:57:08.116] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T11:57:08.394] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T11:57:15.303] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T11:57:15.479] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T11:57:17.636] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/detail","host":"localhost:3002","message":{"responseTime":"响应时间为2.223s"},"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"}
+[2018-09-05T12:14:24.660] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T12:14:26.049] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T12:14:26.071] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T12:23:06.813] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T12:23:06.913] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:22:42.299] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:22:42.325] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:22:43.772] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:22:43.797] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:23:59.949] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:24:00.012] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:25:02.345] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:25:02.572] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:56:58.325] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:56:58.404] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:57:09.842] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:57:10.290] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T14:57:13.850] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/detail","host":"localhost:3002","message":{"responseTime":"响应时间为3.859s"},"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"}
+[2018-09-05T14:57:16.924] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T14:57:17.210] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:17:58.823] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:17:58.938] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:20:19.647] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:20:19.671] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:22:54.628] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:22:54.659] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:23:53.544] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:23:53.713] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:24:05.499] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:24:07.084] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:24:07.240] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:24:17.806] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:24:17.919] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:24:28.929] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:24:29.080] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T15:26:28.520] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T15:26:28.542] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:06:33.171] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:06:34.702] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:06:34.738] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:11:42.989] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:11:43.110] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:11:57.071] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:11:57.165] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:17:00.788] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:17:00.898] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:17:08.517] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:17:08.594] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:18:31.177] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:18:31.572] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:21:36.204] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:21:36.533] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}
+[2018-09-05T17:21:42.581] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3002"}
+[2018-09-05T17:21:42.608] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/novel"}

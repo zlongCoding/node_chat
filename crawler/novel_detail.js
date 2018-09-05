@@ -49,13 +49,10 @@ const sleep = time => new Promise(resolve => {
     return noval
   })
   brower.close()
-  let length = Math.ceil(result.list.length / 100)
-  for (let i = 0; i < length; i++) {
-     process.send({
-       detail: result.detail,
-       list: result.list.slice(i * 100, 100 * (i + 1))
-     })
-  }
+  process.send({
+     detail: result.detail,
+     list: JSON.stringify(result.list)
+  })
   setTimeout(() => {
     process.exit(0)
   }, 1500)
