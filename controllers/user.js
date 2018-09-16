@@ -1,28 +1,71 @@
-const UserService = require('../service/user')
-const bcrypt = require('bcryptjs');
+const UserService = require('../models/user')
+// const bcrypt = require('bcryptjs');
 const SALT_MAX = 10
 class User {
-    constructor() {
-    }
-  
-    async _encryption(password) {
-      const salt = await bcrypt.genSalt(SALT_MAX)
-      const hash = await bcrypt.hash(password, salt)
-      return hash
-    }
- 
-  
- 
-   async signup(ctx) {
-    const { username, password } = ctx.request.body
-    // const code = await getRedis(mobile)
+  constructor() {}
 
-    // const bcryptPassword = await this._encryption(password)
-    await UserService.createUser("153131", 3123123131, 3121)
+  _encryption(password) {
+    // const salt =  bcrypt.genSalt(SALT_MAX)
+    // const hash =  bcrypt.hash(password, salt)
+    return "1111111"
   }
-   
-  
-  
+
+
+
+  async register(ctx) {
+    const {
+      username,
+      password
+    } = ctx.request.body
+    // const code = await getRedis(mobile)
+    const user = await UserService.findOne({username: username}).exec()
+    if (user) {
+      ctx.body = {
+        msg: "该用户名已被占用",
+        code: 401
+      }
+    } else {
+      let userObj = new UserService({
+        username,
+        password
+      })
+      await userObj.save()
+      ctx.body = {
+        msg: "用户创建成功",
+        code: 200
+      }
+    }
   }
-  
-  module.exports = new User()
+
+  async login(ctx) {
+     const {
+       username,
+       password
+     } = ctx.request.body;
+     const user = await UserService.findOne({username: username}).exec()
+     if (user) {
+      let codeCompare = await user.comparePassword(password, user.password)
+      if (codeCompare) {
+         ctx.body = {
+           msg: "登录成功",
+           code: 200
+         }
+      } else {
+        ctx.body = {
+          msg: "密码错误",
+          code: 405
+        }
+      }
+     } else {
+       ctx.body = {
+         msg: "该用户不存在",
+         code: 405
+       }
+     }
+  }
+
+
+
+}
+
+module.exports = new User()
