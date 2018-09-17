@@ -9,7 +9,7 @@ const config = {
   },
   redis: {
     port: 6379,
-    host: '127.0.0.1',
+    host: '118.126.82.217',
     maxAge: 1000 * 60 * 60 * 24 * 7
   },
   email: {
