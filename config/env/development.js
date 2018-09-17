@@ -1,6 +1,6 @@
 
 const config = {
-  port: 3002,
+  port: 3001,
   qiniu: {
     bucket: 'novel',
     video: 'http://pe5tqbn4g.bkt.clouddn.com/',
@@ -17,6 +17,6 @@ const config = {
     user: "zhanglong_hn@163.com",
     pass: "zhanglong163"
   },
-  db: 'mongodb://118.126.82.217:27117/novel',
+  db: 'mongodb://118.126.82.217:27117/chat',
 }
 module.exports = config

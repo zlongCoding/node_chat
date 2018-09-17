@@ -13,8 +13,15 @@ const session = require("koa-session2")
 const email = require("./middleware/sendEmail")
 const store = require("./database/session")
 const loggers = require('./middleware/logger/logger')
+const socketio = require("socket.io")
 // email()
 const app = new koa()
+const server = require('http').createServer(app.callback());
+
+module.exports =  server
+app.use(cors({
+  credentials: true,
+}))
 
 app.use(static(path.resolve(__dirname, "./public")))
 app.use(httpError({
@@ -34,15 +41,13 @@ app.use(logger({
   dir: 'logs',
   serverIp: ip.address()
 }))
-app.use(cors())
 
 require("./database/mongoose")()
 
 app.use(koaBody({
   multipart: true
 }))
-
-app.use(router.routes()).use(router.allowedMethods())
+app.use(router())
 
 app.on("error", (err, ctx) => {
   if (ctx && !ctx.headerSent && ctx.status < 500) {
@@ -55,10 +60,13 @@ app.on("error", (err, ctx) => {
   }
 })
 
-app.listen(config.port, () => {
+server.listen(config.port, () => {
   loggers({
     device: "server",
     dir: 'logs/db',
     deviceContent: `Server start at http://127.0.0.1:${config.port}`
   })
 })
+
+require('./socket');
+require("./socket/weChat")
