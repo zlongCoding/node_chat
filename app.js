@@ -28,11 +28,10 @@ app.use(httpError({
   errorPageFolder: path.resolve(__dirname, './static/errHtml')
 }))
 
-// app.use(session({
-//   key: "sessionId",
-//   store: new store(),
-//   maxAge: config.redis.maxAge
-// }, app))
+app.use(session({
+  store: new store(),
+  maxAge: config.redis.maxAge
+}))
 
 app.use(logger({
   env: app.env,
@@ -59,7 +58,10 @@ app.on("error", (err, ctx) => {
     }
   }
 })
-
+app.use(ctx => {
+  // refresh session if set maxAge
+  ctx.session.refresh()
+})
 server.listen(config.port, () => {
   loggers({
     device: "server",

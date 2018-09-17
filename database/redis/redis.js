@@ -1,24 +1,27 @@
-const ioredis = require('ioredis')
+const Redis = require('ioredis')
 const config = require("../../config")
+const logger = require('../../middleware/logger/logger')
 
 //连接redis 
-let clientCreate = (config, callback_) => {
-  let redis = new ioredis(config)
-  redis.on('connect', () => { 
+let redisConn = () => {
+  let redis = new Redis({
+    port: config.redis.port, // Redis port
+    host: config.redis.host, // Redis host
+    password: config.redis.password,
+  })
+  redis.on('connect', () => {
     callback_(null, redis)
+    logger({
+      device: "db",
+      dir: 'logs/db',
+      deviceContent: `connect to Redis connect success `
+    })
   })
   redis.on('error', (err) => {
-    callback_(err, null)
-  })
-}
-let redisConn = (options) => {
-  let option = options || config.redis
-  return new Promise((resolve, reject) => { 
-    clientCreate(option, (err, conn) => {
-      if (err) {
-        reject(err)
-      }
-      resolve(conn)
+    logger({
+      device: "db",
+      dir: 'logs/db',
+      deviceContent: `connect to Redis disconnected  -> ${err} `
     })
   })
 }

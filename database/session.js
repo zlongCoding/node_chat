@@ -1,31 +1,38 @@
-const redis = require('ioredis')
+const Redis = require('ioredis')
+const {
+  Store
+} = require("koa-session2");
 const uid = require('uid-safe')
-class Store {
+const config = require("../config")
+class RedisStore extends Store {
   constructor() {
-    this.redis = new redis()
+    super();
+    this.redis = new Redis({
+      port: config.redis.port,
+      host: config.redis.host,
+      password: config.redis.password,
+    });
   }
-  getId(length) {
-    return uid.sync(length) 
+
+  async get(sid, ctx) {
+    let data = await this.redis.get(`chat:${sid}`);
+    return JSON.parse(data);
   }
-  get(sid) {
-    return this.redis.get(`session-${sid}`).then((resp) => {
-      try {
-        return Promise.resolve(JSON.parse(resp))
-      } catch (e) {
-        return Promise.resolve({})
-      }
-    })
+
+  async set(session, {
+    sid = this.getID(24),
+    maxAge = 1000000
+  } = {}, ctx) {
+    try {
+      // Use redis set EX to automatically drop expired sessions
+      await this.redis.set(`chat:${sid}`, JSON.stringify(session), 'EX', maxAge / 1000);
+    } catch (e) {}
+    return sid;
   }
-  set(session, opts) {
-    if (!opts.sid) {
-      opts.sid = this.getId(24)
-    }
-    return this.redis.set(`session-${opts.sid}`, JSON.stringify(session)).then(() => {
-      return Promise.resolve(opts.sid)
-    })
-  }
-  destroy(sid) {
-    return this.redis.del(`session-${sid}`)
+
+  async destroy(sid, ctx) {
+    return await this.redis.del(`chat:${sid}`);
   }
 }
-module.exports = Store
+
+module.exports = RedisStore;

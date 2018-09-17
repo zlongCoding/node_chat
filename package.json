@@ -30,7 +30,7 @@
     "koa-compose": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.9.0",
-    "koa-session2": "^2.2.7",
+    "koa-session2": "^2.2.8",
     "koa-socket": "^4.4.0",
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",

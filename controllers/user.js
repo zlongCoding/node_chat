@@ -10,7 +10,13 @@ class User {
     return "1111111"
   }
 
-
+  async account(ctx) {
+    let login = ctx.session.user ? true : false
+    ctx.body = {
+      msg: login,
+      code: 200
+    }
+  }
 
   async register(ctx) {
     const {
@@ -29,6 +35,8 @@ class User {
         username,
         password
       })
+      console.log(ctx.session.user)
+      ctx.session.user = username
       await userObj.save()
       ctx.body = {
         msg: "用户创建成功",
@@ -46,6 +54,9 @@ class User {
      if (user) {
       let codeCompare = await user.comparePassword(password, user.password)
       if (codeCompare) {
+        console.log(ctx.session)
+        console.log(ctx.session.user)
+         ctx.session.user = username
          ctx.body = {
            msg: "登录成功",
            code: 200
