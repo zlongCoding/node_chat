@@ -64,15 +64,14 @@ module.exports = class Wxchat {
 
   }
   login() {
-    console.log(this.credentials.rediUrl)
     return Promise.resolve().then(() => {
       return this.axios({
         method: 'GET',
         url: this.credentials.rediUrl + "&fun=new&version=v2",
       }).then(res => {
-        let reulst = res.data.match(/<ret>(.*)<\/ret>/);
-
-        if (reulst && reulst[1] === '0') {
+        let result = res.data.match(/<ret>(.*)<\/ret>/);
+        
+        if (result && result[1] === '0') {
           this.credentials.skey = res.data.match(/<skey>(.*)<\/skey>/)[1]
           this.credentials.sid = res.data.match(/<wxsid>(.*)<\/wxsid>/)[1]
           this.credentials.uin = res.data.match(/<wxuin>(.*)<\/wxuin>/)[1]
@@ -89,6 +88,7 @@ module.exports = class Wxchat {
             }
           })
         }
+        return result
       })
     })
   }
@@ -109,9 +109,9 @@ module.exports = class Wxchat {
         data: data
       }).then(res => {
         let data = res.data
-        this.credentials.skey = data.SKey || this.credentials.skey
-        this.updateSyncKey(data)
-        Object.assign(this.user, data.User)
+        // this.credentials.skey = data.SKey || this.credentials.skey
+        // this.updateSyncKey(data)
+        // Object.assign(this.user, data.User)
         return data
       })
     }).catch(err => {
@@ -119,22 +119,39 @@ module.exports = class Wxchat {
     })
   }
   updateSyncKey(data) {
-    if (data.SyncKey) {
-      this.credentials.syncKey = data.SyncKey
-    }
-    if (data.SyncCheckKey) {
-      let synckeylist = []
-      for (let e = data.SyncCheckKey.List, o = 0, n = e.length; n > o; o++) {
-        synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
-      }
-      this.credentials.formatedSyncKey = synckeylist.join('|')
-    } else if (!this.credentials.formatedSyncKey && data.SyncKey) {
-      let synckeylist = []
-      for (let e = data.SyncKey.List, o = 0, n = e.length; n > o; o++) {
-        synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
-      }
-      this.credentials.formatedSyncKey = synckeylist.join('|')
-    }
+    // if (data.SyncKey) {
+    //   this.credentials.syncKey = data.SyncKey
+    // }
+    // if (data.SyncCheckKey) {
+    //   let synckeylist = []
+    //   for (let e = data.SyncCheckKey.List, o = 0, n = e.length; n > o; o++) {
+    //     synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
+    //   }
+    //   this.credentials.formatedSyncKey = synckeylist.join('|')
+    // } else if (!this.credentials.formatedSyncKey && data.SyncKey) {
+    //   let synckeylist = []
+    //   for (let e = data.SyncKey.List, o = 0, n = e.length; n > o; o++) {
+    //     synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
+    //   }
+    //   this.credentials.formatedSyncKey = synckeylist.join('|')
+    // }
+  }
+  getWxcontact(seq) {
+    return Promise.resolve().then(() => {
+      return this.axios({
+        method: 'POST',
+        url: wxChatConfig.API_webwxcontact,
+        params: {
+          'lang': 'zh_CN',
+          'pass_ticket': this.credentials.passTicket,
+          'seq': 0,
+          'skey': this.credentials.skey,
+          'r': +new Date()
+        }
+      }).then(res => {
+        return res.data
+      })
+    })
   }
   getBaseRequest() {
     return {

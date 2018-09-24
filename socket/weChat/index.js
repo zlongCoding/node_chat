@@ -15,11 +15,12 @@ class Chat extends Wxchat{
 		return this.chatLogin()
 	}
 	chatinit() {
-    return this.login().then(() => {
-			return this.init().then(data => {
-				return data
-				// this.chatUpdateContacts(data.ContactList)
-			})
+    return this.login().then((res) => {
+      return res
+			// return this.init().then(data => {
+			// 	return data
+			// 	// this.chatUpdateContacts(data.ContactList)
+			// })
 		}).catch(() => {
 
 		})
@@ -27,14 +28,7 @@ class Chat extends Wxchat{
 	chatCheckLogin() {
 			return this.checkLogin()
 				.then(res => {
-					if (res.code === 201 && res.userAvatar) {
-						// this.emit('user-avatar', res.userAvatar)
-					}
-					if (res.code !== 200) {
-						return this.chatCheckLogin()
-					} else {
-						return res
-					}
+					return res
 				})
 	}
 	chatGetUUID() {

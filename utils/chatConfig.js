@@ -16,4 +16,5 @@ module.exports = {
 	API_webwxuploadmedia: "https://" + fileUrl + "/cgi-bin/mmwebwx-bin/webwxuploadmedia",
 	API_webwxpreview: host +  "/cgi-bin/mmwebwx-bin/webwxpreview",
 	API_webwxinit: host +  "/cgi-bin/mmwebwx-bin/webwxinit",
+	API_webwxcontact: host + '/cgi-bin/mmwebwx-bin/webwxgetcontact',
 }
