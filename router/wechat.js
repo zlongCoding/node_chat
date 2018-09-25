@@ -54,14 +54,12 @@ router.get("/wechat/account", async (ctx, next) => {
 				ContactList: []
 			}
 		}
-		console.log(result)
 		ctx.body = result
 	})
 })
 
 router.get("/wechat/login", async (ctx, next) => {
 	await chat.login().then(res => {
-		console.log(ctx.cookies.get("pgv_si"))
 		let options = {
 			maxAge: 60 * 60 * 60 * 12 * 7, //cookie有效时长，单位：毫秒数
 			expires: new Date('2018-10-1'),
@@ -83,7 +81,6 @@ router.get("/wechat/login", async (ctx, next) => {
 			ctx.cookies.set("MM_WX_NOTIFY_STATE", 1, options)
 			ctx.cookies.set("MM_WX_SOUND_STATE", 1, options)
 		}
-		console.log(res.config)
 
 		// ctx.cookies.set("webwx_auth_ticket", res.config.Cookie.webwx_auth_ticket, options)
 
@@ -98,7 +95,6 @@ router.get("/wechat/init", async (ctx, next) => {
 	console.log(ctx.cookies.get("pgv_si"))
 	await chat.init().then(data => {
 
-		console.log(data)
 		ctx.body = data
 	})
 })
@@ -110,14 +106,10 @@ router.get("/wechat/contact", async (ctx, next) => {
 	})
 })
 
-// router.get("/wechat/img", async (ctx, next) => {
-
-// 	console.log(ctx.query)
-// 	const img = await qiniu(`https://wx2.qq.com${ctx.query.img}`, "1111")
-
-// 	ctx.body = {
-// 		img: `http://pe5tqbn4g.bkt.clouddn.com/${img.key}`
-// 	}
-// })
+router.get("/wechat/avator", async (ctx, next) => {
+	await chat.getAvatorImg(ctx.query.img, ctx.query.title).then(data => {
+		ctx.body = data
+	})
+})
 
 module.exports = router

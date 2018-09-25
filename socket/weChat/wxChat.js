@@ -69,8 +69,30 @@ module.exports = class Wxchat {
         method: 'GET',
         url: this.credentials.rediUrl + "&fun=new&version=v2",
       }).then(res => {
+        // ctx.cookies.set("pgv_pvi", res.config.Cookie.pgv_pvi, options)
+        // ctx.cookies.set("pgv_si", res.config.Cookie.pgv_si, options)
+        // ctx.cookies.set("wxuin", res.config.Cookie.wxuin, options)
+        // ctx.cookies.set("wxsid", res.config.Cookie.wxsid, options)
+        // ctx.cookies.set("wxloadtime", res.config.Cookie.wxloadtime, options)
+        // ctx.cookies.set("mm_lang", res.config.Cookie.mm_lang, options)
+        // ctx.cookies.set("webwx_data_ticket", res.config.Cookie.webwx_data_ticket, options)
+        // ctx.cookies.set("webwxuvid", res.config.Cookie.webwxuvid, options)
+        // ctx.cookies.set("webwx_auth_ticket", res.config.Cookie.webwx_auth_ticket, options)
+        // ctx.cookies.set("MM_WX_NOTIFY_STATE", 1, options)
+        // ctx.cookies.set("MM_WX_SOUND_STATE", 1, options)
+        if (res.config) {
+          this.COOKIE = {
+            webwxuvid: res.config.Cookie.webwxuvid,
+            wxuin: res.config.Cookie.wxuin,
+            wxsid: res.config.Cookie.wxsid,
+            webwx_data_ticket: res.config.Cookie.webwx_data_ticket,
+            webwx_auth_ticket: res.config.Cookie.webwx_auth_ticket,
+            wxloadtime: res.config.Cookie.wxloadtime,
+          }
+        }
+
         let result = res.data.match(/<ret>(.*)<\/ret>/);
-        
+
         if (result && result[1] === '0') {
           this.credentials.skey = res.data.match(/<skey>(.*)<\/skey>/)[1]
           this.credentials.sid = res.data.match(/<wxsid>(.*)<\/wxsid>/)[1]
@@ -119,22 +141,7 @@ module.exports = class Wxchat {
     })
   }
   updateSyncKey(data) {
-    // if (data.SyncKey) {
-    //   this.credentials.syncKey = data.SyncKey
-    // }
-    // if (data.SyncCheckKey) {
-    //   let synckeylist = []
-    //   for (let e = data.SyncCheckKey.List, o = 0, n = e.length; n > o; o++) {
-    //     synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
-    //   }
-    //   this.credentials.formatedSyncKey = synckeylist.join('|')
-    // } else if (!this.credentials.formatedSyncKey && data.SyncKey) {
-    //   let synckeylist = []
-    //   for (let e = data.SyncKey.List, o = 0, n = e.length; n > o; o++) {
-    //     synckeylist.push(e[o]['Key'] + '_' + e[o]['Val'])
-    //   }
-    //   this.credentials.formatedSyncKey = synckeylist.join('|')
-    // }
+
   }
   getWxcontact(seq) {
     return Promise.resolve().then(() => {

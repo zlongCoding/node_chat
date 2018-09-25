@@ -16,9 +16,9 @@ exports.wxAxios = (defaults = {}) => {
 
   const instance = axios.create(defaults);
   this.Cookie = defaults.Cookie || {};
-  this.Cookie['pgv_pvi'] = getPgv();
-    this.Cookie['pgv_si'] = getPgv('s')
-
+  // this.Cookie['pgv_pvi'] = getPgv();
+    // this.Cookie['pgv_si'] = getPgv('s')
+   console.log(this.Cookie)
    instance.interceptors.request.use(config => {
       config.headers['cookie'] = Object.keys(this.Cookie).map(key => {
         return `${key}=${this.Cookie[key]}`
@@ -30,7 +30,6 @@ exports.wxAxios = (defaults = {}) => {
    instance.interceptors.response.use(res => {
       let setCookie = res.headers['set-cookie']
       if (setCookie) {
-      	console.log(res.headers)
         setCookie.forEach(item => {
           let pm = item.match(/^(.+?)\s?\=\s?(.+?);/)
           if (pm) {
