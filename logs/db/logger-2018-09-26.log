@@ -81,3 +81,45 @@
 [2018-09-26T01:41:35.097] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
 [2018-09-26T01:42:12.499] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
 [2018-09-26T01:42:12.582] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T12:55:36.209] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
+[2018-09-26T12:55:36.254] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T15:13:24.291] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
+[2018-09-26T15:13:24.387] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T15:13:24.551] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connection 0 to 118.126.82.217:27117 timed out]"}
+[2018-09-26T15:13:24.711] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T15:25:04.695] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
+[2018-09-26T15:25:04.852] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T15:25:04.984] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connection 0 to 118.126.82.217:27117 timed out]"}
+[2018-09-26T15:25:05.773] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T17:28:28.819] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:28:41.140] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.367s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:29:11.373] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:29:11.524] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:29:31.448] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.268s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:29:54.050] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:29:54.203] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:30:21.903] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.33s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:30:36.300] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:30:36.473] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:31:18.960] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:31:19.103] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:31:30.712] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.379s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:32:01.272] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:32:01.476] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:32:21.450] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.625s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:32:26.013] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.698s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:32:35.444] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.323s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:32:43.654] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:32:43.816] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:33:26.097] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:33:26.213] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:33:26.215] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.406s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:34:08.660] [INFO] cheese - {"db":"connect to mongodb disconnected "}
+[2018-09-26T17:34:08.801] [INFO] cheese - {"db":"connect to mongodb fail ->MongoNetworkError: failed to connect to server [118.126.82.217:27117] on first connect [MongoNetworkError: connect ETIMEDOUT 118.126.82.217:27117]"}
+[2018-09-26T17:34:16.687] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.363s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T17:34:54.483] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为50.321s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}
+[2018-09-26T20:14:26.657] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
+[2018-09-26T20:14:26.884] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T20:14:37.626] [INFO] cheese - {"server":"Server start at http://127.0.0.1:3001"}
+[2018-09-26T20:14:38.010] [INFO] cheese - {"db":"connect to mongodb success ->mongodb://118.126.82.217:27117/chat"}
+[2018-09-26T20:14:38.086] [INFO] cheese - {"projectName":"koa2-loggers","serverIp":"192.168.10.52","method":"GET","url":"/wechat/checklogin","host":"127.0.0.1:3001","message":{"responseTime":"响应时间为0.227s"},"referer":"http://localhost:8080/","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"}

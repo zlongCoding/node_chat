@@ -106,6 +106,7 @@ router.get("/wechat/contact", async (ctx, next) => {
 	})
 })
 
+
 router.get("/wechat/avator", async (ctx, next) => {
 	await chat.getAvatorImg(ctx.query.img, ctx.query.title).then(data => {
 		ctx.body = data
