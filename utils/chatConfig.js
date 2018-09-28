@@ -17,4 +17,5 @@ module.exports = {
 	API_webwxpreview: host +  "/cgi-bin/mmwebwx-bin/webwxpreview",
 	API_webwxinit: host +  "/cgi-bin/mmwebwx-bin/webwxinit",
 	API_webwxcontact: host + '/cgi-bin/mmwebwx-bin/webwxgetcontact',
+	API_webwxsync: host +  "/cgi-bin/mmwebwx-bin/webwxsync",
 }
