@@ -1,6 +1,5 @@
-# node_novel
-novel && chat 
-主要是以后app、小程序、 桌面程序、管理后台的后台。
+# node_chat
+管理后台的后台。
 项目所用技术栈：
 > koa + mongoose + redis + puppeteer
 
